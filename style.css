@@ -1,91 +1,183 @@
-/* General reset */
-* {
+/* Global Styles */
+body {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color: #fff5f5;
+    color: #4a0000; /* Dark maroon */
 }
 
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
+a {
+    text-decoration: none;
+    color: #ffbfa1; /* Peach */
 }
 
 /* Navigation */
-header {
-    background: #222;
-    padding: 10px 0;
-}
-nav ul {
+nav {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: #800000; /* Maroon */
+    color: #fff5f5;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav .nav-links {
     list-style: none;
+    display: flex;
+    gap: 20px;
 }
-nav ul li {
-    margin: 0 15px;
+
+nav .nav-links li a:hover {
+    color: #ffbfa1; /* Peach hover */
 }
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+
+/* Hero Section */
+header {
+    padding: 60px 20px;
+    background-color: #ffebdf; /* Light peach */
 }
-nav ul li a:hover {
-    color: #f39c12;
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: auto;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text h1 {
+    margin-bottom: 10px;
+    color: #800000; /* Maroon */
+}
+
+.hero-text p {
+    font-size: 18px;
+    color: #4a0000;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: right;
+}
+
+.hero-image .profile-pic {
+    width: 300px;  /* Rectangle width */
+    height: 400px; /* Rectangle height */
+    object-fit: cover;
+    border: 4px solid #800000;
+    border-radius: 10px; /* Slightly rounded corners */
 }
 
 /* Sections */
 section {
-    padding: 50px;
-    text-align: center;
-}
-section:nth-child(even) {
-    background: #f4f4f4;
+    padding: 50px 20px;
+    max-width: 1000px;
+    margin: auto;
 }
 
-/* Projects */
-.project {
-    margin: 20px auto;
-    padding: 15px;
-    border: 1px solid #ccc;
-    max-width: 500px;
-    border-radius: 8px;
+h2 {
+    color: #800000;
+    margin-bottom: 20px;
+}
+
+/* Skills Section */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.skill {
+    background-color: #ffbfa1;
+    padding: 10px 20px;
+    border-radius: 25px;
+    color: #4a0000;
+    font-weight: bold;
+}
+
+/* Projects Section */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background-color: #ffebdf;
+    border: 2px solid #800000;
+    padding: 20px;
+    border-radius: 10px;
 }
 
 /* Contact Form */
 form {
     display: flex;
     flex-direction: column;
-    max-width: 400px;
-    margin: 20px auto;
+    gap: 15px;
+    max-width: 500px;
+    margin: auto;
 }
-form input, form textarea, form button {
-    margin: 10px 0;
+
+input, textarea {
     padding: 10px;
+    border: 2px solid #800000;
+    border-radius: 5px;
+    font-size: 16px;
 }
-form button {
-    background: #222;
-    color: white;
+
+button {
+    padding: 12px;
+    background-color: #800000;
+    color: #fff5f5;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
 }
-form button:hover {
-    background: #f39c12;
+
+button:hover {
+    background-color: #4a0000;
 }
 
 /* Footer */
 footer {
-    background: #222;
-    color: white;
-    padding: 15px;
     text-align: center;
+    padding: 20px;
+    background-color: #800000;
+    color: #fff5f5;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    nav ul {
+    nav {
         flex-direction: column;
     }
-    section {
-        padding: 30px;
+
+    nav .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-image {
+        text-align: center;
+    }
+
+    .hero-image .profile-pic {
+        width: 80%;
+        height: auto;
     }
 }
